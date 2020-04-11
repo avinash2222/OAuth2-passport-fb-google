@@ -1,0 +1,295 @@
+{
+	"info": {
+		"_postman_id": "48b74685-2ebd-4ca0-8369-e79b609e50c9",
+		"name": "OAuth2-passport-fb-google",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "indexRouter",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\":\"user1\",\n\t\"password\":\"password1\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user registration",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\":\"user3\",\n\t\"password\":\"password3\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "users-facebook-token",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer EAAH5ysyeXIoBADutRRzFBegahZAChZCUofBaS5vi5nfyeya4YMVZAbSImtBWIxaEH71XLPt1rDu4CVzWfKnGyt5ZAjEDz4lmXNZA315iqY1WAjknCKZB6Q1x113ZBuZAVBRbcGlI9XF9iwFl8aBbZC1yG2f7xZBbBpsZCOijBTAYq8RjwTD38Cihkps",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/user/facebook/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"facebook",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete a user",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoidXNlciIsImlzcyI6Im9tbml3eXNlIiwic3ViIjoiNWU4NWFkZWQxOGE0MGYzZDM4MGQ1ZmE3IiwiaWF0IjoxNTg2MDg3MjMzNjYxLCJleHAiOjE1ODYxNzM2MzM2NjF9.sovqJBVWTxyH1Ap5--78PUWNTaCo5MYANouozH0QxE8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/user/:_id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						":_id"
+					],
+					"variable": [
+						{
+							"key": "_id",
+							"value": "5e85ae0a18a40f3d380d5fad"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "admin registration",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"first_name\":\"user-1\",\n    \"last_name\":\"Singh\",\n    \"phone_number\":\"9000000001\",\n    \"password\":\"123\",\n    \"email\" : \"avi1@gmail.com\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/register/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"register",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find All Users",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTkyMTkzN2U5OTQwYzIyMGNkYTcwOTQiLCJpYXQiOjE1ODY2MzMwMTUsImV4cCI6MTU4NjYzNjYxNX0.QRI4ICngmaH-8IOd5mgz0KecvSTusIusFHbFrzQdNok",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/user/details",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"details"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "single user details",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTkyMTkzN2U5OTQwYzIyMGNkYTcwOTQiLCJpYXQiOjE1ODY2MzMwMTUsImV4cCI6MTU4NjYzNjYxNX0.QRI4ICngmaH-8IOd5mgz0KecvSTusIusFHbFrzQdNok",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/user/:_id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						":_id"
+					],
+					"variable": [
+						{
+							"key": "_id",
+							"value": "5e921937e9940c220cda7094"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update a user",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoidXNlciIsImlzcyI6Im9tbml3eXNlIiwic3ViIjoiNWU4NWFkZWQxOGE0MGYzZDM4MGQ1ZmE3IiwiaWF0IjoxNTg2MDg3MjMzNjYxLCJleHAiOjE1ODYxNzM2MzM2NjF9.sovqJBVWTxyH1Ap5--78PUWNTaCo5MYANouozH0QxE8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"first_name\":\"user-4\",\n    \"last_name\":\"reddy5\",\n    \"phone_number\":\"9000000004\",\n    \"password\":\"123\",\n    \"email\" : \"avi4@gmail.com\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/:_id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						":_id"
+					],
+					"variable": [
+						{
+							"key": "_id",
+							"value": "5e85ae0018a40f3d380d5fab"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

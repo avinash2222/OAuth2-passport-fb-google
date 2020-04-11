@@ -6,10 +6,6 @@ const JWT = require('jsonwebtoken');
 var passportLocalMongoose = require('passport-local-mongoose');
 
 var address = new Schema({
-    email : {
-        type : String,
-        trim: true
-    },
     secondary_phone_number : {
         type : Number,
         trim: true
@@ -48,17 +44,21 @@ var newSchema = new Schema({
     //     type : String,
     //     trim : true
     // },
-    first_name : {
+    firstname : {
         type : String,
         // required : "enter first name",
         trim: true
     },
     facebookId : String,
-    last_name : {
+    lastname : {
         type : String,
         // required : "enter last name",
         trim: true   
     }, 
+    email : {
+        type : String,
+        trim: true
+    },
     organisation : {
         type : String
     },
@@ -73,6 +73,11 @@ var newSchema = new Schema({
         type : Boolean,
     },
     address : address,
+    birthday : [Date],
+    gender : {
+        type : String,
+        enum : ['male', 'female']
+    },
     // password automatically added by passport-local-mongoose plugin
     // password : {
     //     type : String,
@@ -80,8 +85,7 @@ var newSchema = new Schema({
     //     required : "enter password"
     // },
     image : { 
-        type : String,
-        //required:true
+        type : String
     },
     role: {
         type: String,
